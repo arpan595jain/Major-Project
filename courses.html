@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>AGRO CARE : Technologies</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <style>
+        /* Custom styling for the boxes */
+        .info-box {
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .info-box h5 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .info-box p {
+            font-size: 16px;
+            margin: 0;
+        }
+    
+        /* Align the Predict button in the center */
+        .predict-btn-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+    </style>
+
+    <!-- Favicon -->
+    <link href="data:image/jpeg;base64,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" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- <script src="js/crop-prediction.js" defer></script> -->
+
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <p class="m-0 fw-bold" style="font-size: 25px;"><img src="data:image/jpeg;base64,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" alt="" height="50px">Agro<span
+                    style="color: #fb873f;">CARE</span></p>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+            style="border: none;">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a  class="nav-item nav-link">About</a>
+                <a  href="courses.html" class="nav-item nav-link">Technologies</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <!-- <a href="team.html" class="dropdown-item">Our Team</a> -->
+                        <a  class="dropdown-item">Testimonial</a>
+
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i></a>
+                <a href="#" class="nav-item nav-link">
+                    <div id="google_translate_element"></div>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">Technologies</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Technologies</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+<!-- Categories Start -->
+<div class="container-xxl py-5 category">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center px-3">Categories</h6>
+            <h1 class="mb-5" style="color: #fb873f;">Collected Data</h1>
+        </div>
+    </div>
+</div> 
+<!-- Categories End -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5">
+            <!-- Box 1: Nitrogen (N) -->
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="info-box">
+                    <h5>Nitrogen (N)</h5>
+                    <input type="number" id="nitrogen" class="form-control" placeholder="Enter Nitrogen (mg/kg)">
+                </div>
+            </div>
+
+            <!-- Box 2: Phosphorus (P) -->
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="info-box">
+                    <h5>Phosphorus (P)</h5>
+                    <input type="number" id="phosphorus" class="form-control" placeholder="Enter Phosphorus (mg/kg)">
+                </div>
+            </div>
+
+            <!-- Box 3: Potassium (K) -->
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="info-box">
+                    <h5>Potassium (K)</h5>
+                    <input type="number" id="potassium" class="form-control" placeholder="Enter Potassium (mg/kg)">
+                </div>
+            </div>
+
+            <!-- Box 4: pH Value -->
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="info-box">
+                    <h5>pH Value</h5>
+                    <input type="number" step="0.1" id="phValue" class="form-control" placeholder="Enter pH Value">
+                </div>
+            </div>
+
+            <!-- Box 5: Humidity -->
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.9s">
+                <div class="info-box">
+                    <h5>Humidity</h5>
+                    <input type="number" id="humidity" class="form-control" placeholder="Enter Humidity (%)">
+                </div>
+            </div>
+
+            <!-- Box 6: Temperature -->
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="1.1s">
+                <div class="info-box">
+                    <h5>Temperature</h5>
+                    <input type="number" id="temperature" class="form-control" placeholder="Enter Temperature (°C)">
+                </div>
+            </div>
+        </div>
+
+        <!-- Predict the Crop button centered -->
+        <div class="row mt-4">
+            <div class="col-12 text-center">
+                <button class="btn btn-primary" id="predict-crop-btn" onclick="predictCrop()">Predict the Crop</button>
+            </div>
+        </div>
+        <!-- <div class="row mt-4">
+    <div class="col-12 text-center">
+        <input type="file" id="dataset-file" accept=".csv" class="form-control mb-3">
+        <button class="btn btn-primary" id="predict-crop-btn" onclick="predictCrop()">Predict the Crop</button>
+    </div>
+</div> -->
+        <!-- Result display -->
+        <div class="row mt-4">
+            <div class="col-12 text-center">
+                <h5 id="prediction-result" class="text-success"></h5>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // Dataset stored locally for example purposes
+    const dataset = [
+
+{ N: 90, P: 42, K: 43, Temp: 20.8, Humidity: 82.0, pH: 6.5, Crop: "Rice" },
+{ N: 85, P: 58, K: 41, Temp: 21.7, Humidity: 80.3, pH: 7.0, Crop: "Rice" },
+{ N: 60, P: 55, K: 44, Temp: 23.0, Humidity: 82.3, pH: 7.8, Crop: "Rice" },
+{ N: 74, P: 35, K: 40, Temp: 26.4, Humidity: 80.1, pH: 6.9, Crop: "Rice" },
+{ N: 78, P: 42, K: 42, Temp: 20.1, Humidity: 81.6, pH: 7.6, Crop: "Rice" },
+{ N: 69, P: 37, K: 42, Temp: 23.0, Humidity: 83.3, pH: 7.0, Crop: "Rice" },
+{ N: 69, P: 55, K: 38, Temp: 22.7, Humidity: 82.6, pH: 5.8, Crop: "Rice" },
+{ N: 94, P: 53, K: 40, Temp: 20.2, Humidity: 82.8, pH: 5.8, Crop: "Rice" },
+{ N: 89, P: 54, K: 38, Temp: 24.5, Humidity: 83.5, pH: 6.4, Crop: "Rice"},
+{ N: 68, P: 58, K: 38, Temp: 23.2, Humidity: 83.0, pH: 6.6, Crop: "Rice"},
+{ N: 91, P: 53, K: 40, Temp: 26.5, Humidity: 81.4, pH: 5.3, Crop: "Rice"},
+{ N: 90, P: 46, K: 38, Temp: 23.9, Humidity: 81.4, pH: 7.7, Crop: "Rice"},
+{ N: 78, P: 58, K: 38, Temp: 26.8, Humidity: 83.0, pH: 5.1, Crop: "Rice"},
+{ N: 93, P: 56, K: 38, Temp: 24.0, Humidity: 80.8, pH: 6.8, Crop: "Rice"},
+{ N: 94, P: 50, K: 38, Temp: 25.6, Humidity: 82.0, pH: 6.9, Crop: "Rice"},
+{ N: 60, P: 48, K: 38, Temp: 24.3, Humidity: 80.3, pH: 7.0, Crop: "Rice"},
+{ N: 85, P: 38, K: 38, Temp: 21.5, Humidity: 82.7, pH: 6.23, Crop: "Rice"},
+{ N: 91, P: 35, K: 38, Temp: 23.7, Humidity: 80.4, pH: 6.9, Crop: "Rice"},
+{ N: 77, P: 38, K: 38, Temp: 21.8, Humidity: 80.2, pH: 5.9, Crop: "Rice"},
+{ N: 88, P: 35, K: 38, Temp: 23.6, Humidity: 83.6, pH: 5.85, Crop: "Rice"},
+{ N: 89, P: 45, K: 38, Temp: 21.3, Humidity: 80.5, pH: 6.44, Crop: "Rice"},
+{ N: 76, P: 40, K: 38, Temp: 25.2, Humidity: 83.7, pH: 5.0, Crop: "Rice"},
+{ N: 71, P: 54, K: 16, Temp: 22.61, Humidity: 63.69, pH: 5.75, Crop: "Maize" },
+  { N: 61, P: 44, K: 17, Temp: 26.10, Humidity: 71.57, pH: 6.93, Crop: "Maize" },
+  { N: 80, P: 43, K: 16, Temp: 23.56, Humidity: 71.59, pH: 6.66, Crop: "Maize" },
+  { N: 73, P: 58, K: 21, Temp: 19.97, Humidity: 57.68, pH: 6.60, Crop: "Maize" },
+  { N: 61, P: 38, K: 20, Temp: 18.47, Humidity: 62.69, pH: 5.97, Crop: "Maize" },
+  { N: 68, P: 41, K: 16, Temp: 21.77, Humidity: 57.80, pH: 6.16, Crop: "Maize" },
+  { N: 93, P: 41, K: 17, Temp: 25.62, Humidity: 66.50, pH: 6.05, Crop: "Maize" },
+  { N: 89, P: 60, K: 19, Temp: 25.19, Humidity: 66.69, pH: 5.91, Crop: "Maize" },
+  { N: 76, P: 44, K: 17, Temp: 20.41, Humidity: 62.55, pH: 5.85, Crop: "Maize" },
+  { N: 67, P: 60, K: 25, Temp: 24.92, Humidity: 66.78, pH: 5.75, Crop: "Maize" },
+  { N: 70, P: 44, K: 19, Temp: 23.31, Humidity: 73.45, pH: 5.85, Crop: "Maize" },
+  { N: 90, P: 49, K: 21, Temp: 24.84, Humidity: 68.35, pH: 6.47, Crop: "Maize" },
+  { N: 62, P: 52, K: 16, Temp: 22.27, Humidity: 58.84, pH: 6.97, Crop: "Maize" },
+  { N: 92, P: 44, K: 16, Temp: 18.87, Humidity: 65.76, pH: 6.08, Crop: "Maize" },
+  { N: 66, P: 54, K: 21, Temp: 25.19, Humidity: 60.20, pH: 5.91, Crop: "Maize" },
+  { N: 63, P: 58, K: 22, Temp: 18.25, Humidity: 55.28, pH: 6.20, Crop: "Maize" },
+  { N: 70, P: 47, K: 17, Temp: 24.61, Humidity: 70.41, pH: 6.60, Crop: "Maize" },
+  { N: 61, P: 41, K: 17, Temp: 25.14, Humidity: 65.26, pH: 6.02, Crop: "Maize" },
+  { N: 66, P: 53, K: 19, Temp: 23.09, Humidity: 60.11, pH: 6.03, Crop: "Maize" },
+  { N: 74, P: 55, K: 19, Temp: 18.05, Humidity: 62.89, pH: 6.28, Crop: "Maize" },
+  { N: 40, P: 72, K: 77, Temp: 17.02, Humidity: 16.99, pH: 7.49, Crop: "ChickPea" },
+  { N: 23, P: 72, K: 84, Temp: 19.02, Humidity: 17.13, pH: 6.92, Crop: "ChickPea" },
+  { N: 39, P: 58, K: 85, Temp: 17.89, Humidity: 15.41, pH: 6.00, Crop: "ChickPea" },
+  { N: 22, P: 72, K: 85, Temp: 18.87, Humidity: 15.66, pH: 6.39, Crop: "ChickPea" },
+  { N: 36, P: 67, K: 77, Temp: 18.37, Humidity: 19.56, pH: 7.15, Crop: "ChickPea" },
+  { N: 32, P: 73, K: 81, Temp: 20.45, Humidity: 15.40, pH: 5.99, Crop: "ChickPea" },
+  { N: 58, P: 70, K: 84, Temp: 20.65, Humidity: 16.61, pH: 6.23, Crop: "ChickPea" },
+  { N: 59, P: 70, K: 84, Temp: 17.33, Humidity: 18.75, pH: 7.55, Crop: "ChickPea" },
+  { N: 42, P: 62, K: 75, Temp: 18.18, Humidity: 18.90, pH: 7.01, Crop: "ChickPea" },
+  { N: 28, P: 74, K: 81, Temp: 18.01, Humidity: 18.31, pH: 8.75, Crop: "ChickPea" },
+  { N: 58, P: 66, K: 79, Temp: 20.99, Humidity: 19.33, pH: 8.72, Crop: "ChickPea" },
+  { N: 43, P: 66, K: 79, Temp: 19.46, Humidity: 15.23, pH: 7.98, Crop: "ChickPea" },
+  { N: 58, P: 63, K: 81, Temp: 19.81, Humidity: 14.70, pH: 6.52, Crop: "ChickPea" },
+  { N: 23, P: 62, K: 85, Temp: 18.97, Humidity: 19.52, pH: 8.49, Crop: "ChickPea" },
+  { N: 27, P: 62, K: 77, Temp: 18.20, Humidity: 14.71, pH: 6.58, Crop: "ChickPea" },
+  { N: 28, P: 72, K: 84, Temp: 18.73, Humidity: 19.18, pH: 6.48, Crop: "ChickPea" },
+  { N: 50, P: 56, K: 76, Temp: 21.00, Humidity: 19.86, pH: 7.97, Crop: "ChickPea" },
+  { N: 39, P: 71, K: 84, Temp: 20.28, Humidity: 16.40, pH: 8.14, Crop: "ChickPea" },
+  { N: 25, P: 78, K: 76, Temp: 17.48, Humidity: 15.76, pH: 7.23, Crop: "ChickPea" },
+  { N: 31, P: 70, K: 77, Temp: 20.89, Humidity: 14.32, pH: 6.49, Crop: "ChickPea" },
+  { N: 26, P: 80, K: 83, Temp: 17.08, Humidity: 16.15, pH: 7.53, Crop: "ChickPea" },
+  { N: 25, P: 68, K: 77, Temp: 20.09, Humidity: 15.11, pH: 7.70, Crop: "ChickPea" },
+  { N: 31, P: 78, K: 76, Temp: 17.57, Humidity: 15.00, pH: 8.52, Crop: "ChickPea" },
+  { N: 60, P: 68, K: 83, Temp: 19.12, Humidity: 18.43, pH: 6.62, Crop: "ChickPea" },
+  { N: 59, P: 62, K: 83, Temp: 18.58, Humidity: 19.22, pH: 8.10, Crop: "ChickPea" },
+  { N: 22, P: 67, K: 78, Temp: 17.17, Humidity: 14.42, pH: 6.20, Crop: "ChickPea" },
+  { N: 36, P: 65, K: 80, Temp: 18.29, Humidity: 16.68, pH: 6.05, Crop: "ChickPea" },
+  { N: 59, P: 60, K: 84, Temp: 19.03, Humidity: 18.67, pH: 7.69, Crop: "ChickPea" },
+  { N: 54, P: 77, K: 85, Temp: 17.14, Humidity: 17.07, pH: 7.83, Crop: "ChickPea" },
+  { N: 13, P: 60, K: 25, Temp: 17.14, Humidity: 20.60, pH: 5.69, Crop: "KidneyBeans" },
+    { N: 25, P: 70, K: 16, Temp: 19.63, Humidity: 18.91, pH: 5.76, Crop: "KidneyBeans" },
+    { N: 31, P: 55, K: 22, Temp: 22.91, Humidity: 21.34, pH: 5.87, Crop: "KidneyBeans" },
+    { N: 40, P: 64, K: 16, Temp: 16.43, Humidity: 24.24, pH: 5.93, Crop: "KidneyBeans" },
+    { N: 2, P: 61, K: 20, Temp: 22.14, Humidity: 23.02, pH: 5.96, Crop: "KidneyBeans" },
+    { N: 26, P: 65, K: 22, Temp: 17.85, Humidity: 18.78, pH: 5.95, Crop: "KidneyBeans" },
+    { N: 17, P: 57, K: 21, Temp: 19.88, Humidity: 20.32, pH: 5.79, Crop: "KidneyBeans" },
+    { N: 26, P: 80, K: 18, Temp: 19.33, Humidity: 23.33, pH: 5.58, Crop: "KidneyBeans" },
+    { N: 17, P: 59, K: 17, Temp: 18.42, Humidity: 23.43, pH: 5.69, Crop: "KidneyBeans" },
+    { N: 27, P: 59, K: 22, Temp: 21.81, Humidity: 23.21, pH: 5.79, Crop: "KidneyBeans" },
+    { N: 28, P: 58, K: 24, Temp: 19.73, Humidity: 18.28, pH: 5.75, Crop: "KidneyBeans" },
+    { N: 25, P: 57, K: 19, Temp: 17.15, Humidity: 19.87, pH: 5.57, Crop: "KidneyBeans" },
+    { N: 28, P: 80, K: 17, Temp: 19.62, Humidity: 18.67, pH: 5.81, Crop: "KidneyBeans" },
+    { N: 25, P: 60, K: 22, Temp: 21.63, Humidity: 21.18, pH: 5.89, Crop: "KidneyBeans" },
+    { N: 12, P: 78, K: 23, Temp: 16.07, Humidity: 18.72, pH: 6.00, Crop: "KidneyBeans" },
+    { N: 6, P: 77, K: 25, Temp: 20.61, Humidity: 24.36, pH: 5.79, Crop: "KidneyBeans" },
+    { N: 22, P: 79, K: 17, Temp: 21.42, Humidity: 20.40, pH: 5.91, Crop: "KidneyBeans" },
+    { N: 27, P: 80, K: 15, Temp: 19.07, Humidity: 21.21, pH: 5.79, Crop: "KidneyBeans" },
+    { N: 10, P: 55, K: 23, Temp: 21.19, Humidity: 19.63, pH: 5.73, Crop: "KidneyBeans" },
+    { N: 23, P: 65, K: 20, Temp: 23.04, Humidity: 22.43, pH: 5.83, Crop: "KidneyBeans" },
+    { N: 19, P: 78, K: 16, Temp: 20.65, Humidity: 23.11, pH: 5.97, Crop: "KidneyBeans" },
+    { N: 19, P: 65, K: 25, Temp: 18.10, Humidity: 18.29, pH: 5.63, Crop: "KidneyBeans" },
+    { N: 22, P: 70, K: 19, Temp: 18.24, Humidity: 21.08, pH: 5.52, Crop: "KidneyBeans" },
+    { N: 37, P: 64, K: 22, Temp: 17.48, Humidity: 18.83, pH: 5.95, Crop: "KidneyBeans" },
+    { N: 11, P: 71, K: 17, Temp: 19.92, Humidity: 21.47, pH: 5.75, Crop: "KidneyBeans" },
+    { N: 18, P: 79, K: 20, Temp: 20.28, Humidity: 23.24, pH: 5.88, Crop: "KidneyBeans" },
+    { N: 3, P: 72, K: 24, Temp: 36.51, Humidity: 57.93, pH: 6.03, Crop: "PigeonPeas" },
+    { N: 40, P: 59, K: 23, Temp: 36.89, Humidity: 62.73, pH: 5.27, Crop: "PigeonPeas" },
+    { N: 33, P: 73, K: 23, Temp: 29.24, Humidity: 59.39, pH: 5.99, Crop: "PigeonPeas" },
+    { N: 27, P: 57, K: 24, Temp: 27.34, Humidity: 43.36, pH: 6.09, Crop: "PigeonPeas" },
+    { N: 10, P: 79, K: 18, Temp: 21.06, Humidity: 55.47, pH: 5.62, Crop: "PigeonPeas" },
+    { N: 30, P: 75, K: 25, Temp: 30.33, Humidity: 42.35, pH: 6.45, Crop: "PigeonPeas" },
+    { N: 40, P: 70, K: 20, Temp: 31.80, Humidity: 45.03, pH: 5.62, Crop: "PigeonPeas" },
+    { N: 38, P: 55, K: 19, Temp: 33.18, Humidity: 38.23, pH: 5.86, Crop: "PigeonPeas" },
+    { N: 35, P: 58, K: 20, Temp: 29.39, Humidity: 63.48, pH: 5.76, Crop: "PigeonPeas" },
+    { N: 38, P: 61, K: 21, Temp: 30.27, Humidity: 67.39, pH: 4.70, Crop: "PigeonPeas" },
+    { N: 33, P: 58, K: 24, Temp: 35.46, Humidity: 68.76, pH: 5.27, Crop: "PigeonPeas" },
+    { N: 16, P: 56, K: 17, Temp: 33.80, Humidity: 40.03, pH: 7.45, Crop: "PigeonPeas" },
+    { N: 31, P: 72, K: 17, Temp: 28.69, Humidity: 49.47, pH: 5.83, Crop: "PigeonPeas" },
+    { N: 16, P: 80, K: 20, Temp: 31.24, Humidity: 56.67, pH: 7.34, Crop: "PigeonPeas" },
+    { N: 27, P: 72, K: 17, Temp: 28.98, Humidity: 57.23, pH: 6.35, Crop: "PigeonPeas" },
+    { N: 40, P: 62, K: 19, Temp: 27.32, Humidity: 34.14, pH: 4.70, Crop: "PigeonPeas" },
+    { N: 18, P: 58, K: 16, Temp: 21.48, Humidity: 38.80, pH: 4.96, Crop: "PigeonPeas" },
+    { N: 3, P: 68, K: 16, Temp: 18.32, Humidity: 34.70, pH: 4.96, Crop: "PigeonPeas" },
+    { N: 26, P: 67, K: 24, Temp: 36.98, Humidity: 37.74, pH: 5.64, Crop: "PigeonPeas" },
+    { N: 16, P: 70, K: 20, Temp: 24.80, Humidity: 40.12, pH: 5.61, Crop: "PigeonPeas" },
+    { N: 3, P: 49, K: 18, Temp: 27.91, Humidity: 64.70, pH: 3.69, Crop: "MothBeans" },
+    { N: 22, P: 59, K: 23, Temp: 27.32, Humidity: 51.27, pH: 4.37, Crop: "MothBeans" },
+    { N: 36, P: 58, K: 25, Temp: 28.66, Humidity: 59.31, pH: 8.39, Crop: "MothBeans" },
+    { N: 4, P: 43, K: 18, Temp: 29.02, Humidity: 61.09, pH: 8.84, Crop: "MothBeans" },
+    { N: 29, P: 54, K: 16, Temp: 27.78, Humidity: 54.6, pH: 8.15, Crop: "MothBeans" },
+    { N: 32, P: 43, K: 22, Temp: 31.99, Humidity: 54.1, pH: 5.27, Crop: "MothBeans" },
+    { N: 14, P: 55, K: 15, Temp: 27.34, Humidity: 55.28, pH: 8.05, Crop: "MothBeans" },
+{ N: 5, P: 35, K: 20, Temp: 28.93, Humidity: 53.57, pH: 9.68, Crop: "MothBeans" },
+{ N: 25, P: 57, K: 24, Temp: 27.65, Humidity: 58.60, pH: 6.97, Crop: "MothBeans" },
+{ N: 11, P: 53, K: 24, Temp: 28.52, Humidity: 55.77, pH: 7.39, Crop: "MothBeans" },
+{ N: 40, P: 49, K: 17, Temp: 31.02, Humidity: 45.89, pH: 6.69, Crop: "MothBeans" },
+{ N: 38, P: 56, K: 25, Temp: 25.74, Humidity: 45.38, pH: 7.88, Crop: "MothBeans" },
+{ N: 27, P: 43, K: 23, Temp: 31.70, Humidity: 56.85, pH: 5.88, Crop: "MothBeans" },
+{ N: 24, P: 38, K: 22, Temp: 24.48, Humidity: 58.52, pH: 8.20, Crop: "MothBeans" },
+{ N: 23, P: 45, K: 21, Temp: 31.47, Humidity: 51.80, pH: 8.99, Crop: "MothBeans" },
+{ N: 29, P: 57, K: 20, Temp: 25.61, Humidity: 50.73, pH: 5.88, Crop: "MothBeans" },
+{ N: 31, P: 35, K: 23, Temp: 30.30, Humidity: 47.18, pH: 7.71, Crop: "MothBeans" },
+{ N: 0, P: 55, K: 25, Temp: 28.17, Humidity: 43.67, pH: 4.52, Crop: "MothBeans" },
+{ N: 7, P: 45, K: 22, Temp: 25.51, Humidity: 44.83, pH: 9.93, Crop: "MothBeans" },
+{ N: 17, P: 58, K: 25, Temp: 31.13, Humidity: 43.59, pH: 6.46, Crop: "MothBeans" },
+{ N: 11, P: 44, K: 17, Temp: 26.34, Humidity: 55.59, pH: 8.02, Crop: "MothBeans" },
+{ N: 22, P: 49, K: 22, Temp: 28.23, Humidity: 61.56, pH: 3.71, Crop: "MothBeans" },
+{ N: 9, P: 51, K: 19, Temp: 27.04, Humidity: 49.33, pH: 5.49, Crop: "MothBeans" },
+{ N: 28, P: 48, K: 15, Temp: 25.16, Humidity: 55.25, pH: 9.25, Crop: "MothBeans" },
+{ N: 26, P: 50, K: 19, Temp: 27.32, Humidity: 51.67, pH: 6.01, Crop: "MothBeans" },
+{ N: 36, P: 56, K: 20, Temp: 25.41, Humidity: 49.66, pH: 7.44, Crop: "MothBeans" },
+{ N: 8, P: 60, K: 18, Temp: 31.22, Humidity: 46.02, pH: 3.81, Crop: "MothBeans" },
+{ N: 24, P: 37, K: 21, Temp: 30.57, Humidity: 58.23, pH: 5.82, Crop: "MothBeans" },
+{ N: 22, P: 43, K: 24, Temp: 25.43, Humidity: 53.22, pH: 4.52, Crop: "MothBeans" },
+{ N: 36, P: 43, K: 24, Temp: 27.09, Humidity: 43.65, pH: 3.51, Crop: "MothBeans" },
+{ N: 22, P: 44, K: 24, Temp: 24.31, Humidity: 56.33, pH: 6.03, Crop: "MothBeans" },
+{ N: 17, P: 43, K: 22, Temp: 30.06, Humidity: 45.90, pH: 5.50, Crop: "MothBeans" },
+{ N: 8, P: 45, K: 15, Temp: 28.10, Humidity: 60.98, pH: 4.61, Crop: "MothBeans" },
+{ N: 7, P: 56, K: 23, Temp: 26.34, Humidity: 40.01, pH: 5.55, Crop: "MothBeans" },
+{ N: 34, P: 41, K: 15, Temp: 30.72, Humidity: 47.72, pH: 5.77, Crop: "MothBeans" },
+{ N: 31, P: 41, K: 21, Temp: 28.32, Humidity: 61.35, pH: 4.30, Crop: "MothBeans" },
+    { N: 19, P: 55, K: 20, Temp: 27.43, Humidity: 87.81, pH: 7.19, Crop: "MungBean" },
+    { N: 8, P: 54, K: 20, Temp: 28.33, Humidity: 80.77, pH: 7.03, Crop: "MungBean" },
+    { N: 36, P: 55, K: 20, Temp: 27.01, Humidity: 84.34, pH: 6.64, Crop: "MungBean" },
+    { N: 10, P: 56, K: 16, Temp: 28.17, Humidity: 81.05, pH: 6.83, Crop: "MungBean" },
+    { N: 22, P: 56, K: 17, Temp: 29.88, Humidity: 87.33, pH: 6.89, Crop: "MungBean" },
+    { N: 9, P: 57, K: 24, Temp: 29.89, Humidity: 89.72, pH: 7.17, Crop: "MungBean" },
+    { N: 34, P: 59, K: 23, Temp: 28.56, Humidity: 83.25, pH: 6.94, Crop: "MungBean" },
+    { N: 31, P: 51, K: 25, Temp: 27.54, Humidity: 85.57, pH: 7.20, Crop: "MungBean" },
+    { N: 0, P: 49, K: 18, Temp: 29.68, Humidity: 87.94, pH: 6.99, Crop: "MungBean" },
+    { N: 21, P: 39, K: 20, Temp: 28.14, Humidity: 82.12, pH: 7.06, Crop: "MungBean" },
+    { N: 28, P: 35, K: 22, Temp: 29.53, Humidity: 86.73, pH: 7.16, Crop: "MungBean" },
+    { N: 17, P: 52, K: 17, Temp: 27.88, Humidity: 86.45, pH: 6.36, Crop: "MungBean" },
+    { N: 24, P: 42, K: 23, Temp: 28.22, Humidity: 82.36, pH: 6.43, Crop: "MungBean" },
+    { N: 28, P: 46, K: 16, Temp: 29.01, Humidity: 84.96, pH: 6.66, Crop: "MungBean" },
+    { N: 21, P: 38, K: 21, Temp: 29.76, Humidity: 86.45, pH: 6.64, Crop: "MungBean" },
+    { N: 34, P: 60, K: 25, Temp: 29.78, Humidity: 85.17, pH: 6.79, Crop: "MungBean" },
+    { N: 19, P: 53, K: 22, Temp: 27.86, Humidity: 80.45, pH: 6.85, Crop: "MungBean" },
+    { N: 31, P: 58, K: 15, Temp: 27.11, Humidity: 84.97, pH: 7.12, Crop: "MungBean" },
+    { N: 19, P: 35, K: 24, Temp: 27.11, Humidity: 83.64, pH: 6.88, Crop: "MungBean" },
+    { N: 24, P: 53, K: 17, Temp: 28.95, Humidity: 89.08, pH: 6.42, Crop: "MungBean" },
+    { N: 13, P: 47, K: 20, Temp: 29.22, Humidity: 87.94, pH: 6.54, Crop: "MungBean" },
+    { N: 31, P: 53, K: 16, Temp: 28.74, Humidity: 85.82, pH: 6.45, Crop: "MungBean" },
+    { N: 28, P: 45, K: 23, Temp: 29.65, Humidity: 80.30, pH: 6.49, Crop: "MungBean" },
+    { N: 31, P: 37, K: 21, Temp: 27.24, Humidity: 86.40, pH: 6.71, Crop: "MungBean" },
+    { N: 33, P: 60, K: 15, Temp: 28.95, Humidity: 81.67, pH: 6.51, Crop: "MungBean" },
+    { N: 34, P: 45, K: 21, Temp: 28.19, Humidity: 82.61, pH: 6.29, Crop: "MungBean" },
+    { N: 13, P: 57, K: 25, Temp: 28.30, Humidity: 86.21, pH: 6.86, Crop: "MungBean" },
+    { N: 33, P: 57, K: 17, Temp: 27.90, Humidity: 88.72, pH: 6.78, Crop: "MungBean" },
+    { N: 32, P: 57, K: 22, Temp: 28.69, Humidity: 87.50, pH: 6.77, Crop: "MungBean" },
+    { N: 23, P: 59, K: 25, Temp: 27.83, Humidity: 88.73, pH: 6.32, Crop: "MungBean" },
+    { N: 35, P: 41, K: 18, Temp: 28.71, Humidity: 81.59, pH: 6.71, Crop: "MungBean" },
+    { N: 6, P: 48, K: 24, Temp: 28.64, Humidity: 84.61, pH: 6.79, Crop: "MungBean" },
+    { N: 29, P: 36, K: 25, Temp: 28.29, Humidity: 88.44, pH: 7.13, Crop: "MungBean" },
+    { N: 4, P: 36, K: 22, Temp: 27.61, Humidity: 86.13, pH: 7.01, Crop: "MungBean" },
+    { N: 10, P: 59, K: 22, Temp: 28.61, Humidity: 86.99, pH: 7.16, Crop: "MungBean" },
+    { N: 14, P: 48, K: 21, Temp: 29.25, Humidity: 84.80, pH: 6.99, Crop: "MungBean" },
+    { N: 8, P: 50, K: 21, Temp: 28.63, Humidity: 89.11, pH: 6.22, Crop: "MungBean" },
+    { N: 20, P: 40, K: 15, Temp: 29.57, Humidity: 88.08, pH: 7.20, Crop: "MungBean" },
+    { N: 56, P: 79, K: 15, Temp: 29.48, Humidity: 63.20, pH: 7.45, Crop: "Blackgram" },
+    { N: 25, P: 62, K: 21, Temp: 26.73, Humidity: 68.14, pH: 7.04, Crop: "Blackgram" },
+    { N: 42, P: 61, K: 22, Temp: 26.27, Humidity: 62.29, pH: 7.42, Crop: "Blackgram" },
+    { N: 42, P: 73, K: 25, Temp: 34.04, Humidity: 67.21, pH: 6.50, Crop: "Blackgram" },
+    { N: 44, P: 58, K: 18, Temp: 28.04, Humidity: 65.07, pH: 6.81, Crop: "Blackgram" },
+    { N: 50, P: 55, K: 16, Temp: 28.81, Humidity: 65.34, pH: 7.58, Crop: "Blackgram" },
+    { N: 35, P: 72, K: 21, Temp: 34.04, Humidity: 64.29, pH: 7.74, Crop: "Blackgram" },
+    { N: 30, P: 64, K: 20, Temp: 33.86, Humidity: 61.57, pH: 6.57, Crop: "Blackgram" },
+    { N: 27, P: 64, K: 21, Temp: 32.84, Humidity: 68.68, pH: 7.54, Crop: "Blackgram" },
+    { N: 50, P: 74, K: 17, Temp: 27.10, Humidity: 63.36, pH: 6.54, Crop: "Blackgram" },
+    { N: 39, P: 73, K: 24, Temp: 25.66, Humidity: 61.18, pH: 7.22, Crop: "Blackgram" },
+    { N: 57, P: 67, K: 25, Temp: 32.35, Humidity: 66.61, pH: 7.55, Crop: "Blackgram" },
+    { N: 52, P: 63, K: 19, Temp: 29.59, Humidity: 68.32, pH: 6.93, Crop: "Blackgram" },
+    { N: 55, P: 66, K: 22, Temp: 30.91, Humidity: 68.79, pH: 7.75, Crop: "Blackgram" },
+    { N: 51, P: 56, K: 18, Temp: 28.13, Humidity: 64.21, pH: 6.71, Crop: "Blackgram" },
+    { N: 36, P: 66, K: 15, Temp: 30.09, Humidity: 69.35, pH: 6.67, Crop: "Blackgram" },
+    { N: 59, P: 55, K: 19, Temp: 31.74, Humidity: 62.51, pH: 7.33, Crop: "Blackgram" },
+    { N: 50, P: 58, K: 23, Temp: 27.81, Humidity: 62.50, pH: 7.60, Crop: "Blackgram" },
+    { N: 30, P: 65, K: 25, Temp: 32.89, Humidity: 64.59, pH: 7.71, Crop: "Blackgram" },
+    { N: 20, P: 62, K: 18, Temp: 29.36, Humidity: 64.99, pH: 7.37, Crop: "Blackgram" },
+    { N: 58, P: 71, K: 15, Temp: 27.83, Humidity: 67.59, pH: 6.92, Crop: "Blackgram" },
+    { N: 25, P: 71, K: 24, Temp: 28.50, Humidity: 60.45, pH: 7.19, Crop: "Blackgram" },
+    { N: 52, P: 71, K: 16, Temp: 27.74, Humidity: 68.54, pH: 7.08, Crop: "Blackgram" },
+    { N: 40, P: 63, K: 18, Temp: 30.42, Humidity: 67.66, pH: 6.74, Crop: "Blackgram" },
+    { N: 20, P: 60, K: 25, Temp: 27.33, Humidity: 69.09, pH: 6.73, Crop: "Blackgram" },
+    { N: 48, P: 61, K: 21, Temp: 30.28, Humidity: 61.69, pH: 6.63, Crop: "Blackgram" },
+    { N: 49, P: 68, K: 22, Temp: 28.57, Humidity: 61.53, pH: 7.13, Crop: "Blackgram" },
+    { N: 48, P: 62, K: 15, Temp: 25.37, Humidity: 66.64, pH: 7.54, Crop: "Blackgram" },
+    { N: 32, P: 66, K: 17, Temp: 34.95, Humidity: 65.27, pH: 7.16, Crop: "Blackgram" },
+    { N: 21, P: 63, K: 22, Temp: 25.10, Humidity: 67.73, pH: 6.86, Crop: "Blackgram" },
+    { N: 20, P: 72, K: 19, Temp: 32.48, Humidity: 64.35, pH: 7.40, Crop: "Blackgram" },
+    { N: 25, P: 65, K: 21, Temp: 33.86, Humidity: 68.59, pH: 6.88, Crop: "Blackgram" },
+    { N: 41, P: 78, K: 21, Temp: 25.20, Humidity: 60.37, pH: 6.58, Crop: "Blackgram" },
+    { N: 53, P: 67, K: 17, Temp: 31.78, Humidity: 69.02, pH: 7.30, Crop: "Blackgram" },
+    { N: 39, P: 60, K: 21, Temp: 34.90, Humidity: 63.60, pH: 6.97, Crop: "Blackgram" },
+    { N: 25, P: 76, K: 17, Temp: 31.74, Humidity: 68.64, pH: 7.24, Crop: "Blackgram" },
+    { N: 21, P: 78, K: 19, Temp: 27.16, Humidity: 66.76, pH: 6.92, Crop: "Blackgram" },
+    { N: 57, P: 60, K: 17, Temp: 26.24, Humidity: 67.89, pH: 7.50, Crop: "Blackgram" },
+    { N: 56, P: 75, K: 15, Temp: 30.20, Humidity: 60.07, pH: 7.15, Crop: "Blackgram" },
+    { N: 49, P: 72, K: 15, Temp: 31.56, Humidity: 67.84, pH: 7.14, Crop: "Blackgram" },
+    { N: 24, P: 80, K: 19, Temp: 29.68, Humidity: 69.09, pH: 6.81, Crop: "Blackgram" },
+    { N: 49, P: 76, K: 18, Temp: 27.05, Humidity: 67.70, pH: 7.39, Crop: "Blackgram" },
+    { N: 32, P: 76, K: 15, Temp: 28.05, Humidity: 63.50, pH: 7.60, Crop: "Lentil" },
+{ N: 13, P: 61, K: 22, Temp: 19.13, Humidity: 63.28, pH: 7.73, Crop: "Lentil" },
+{ N: 38, P: 60, K: 20, Temp: 29.85, Humidity: 60.64, pH: 7.49, Crop: "Lentil" },
+{ N: 11, P: 74, K: 17, Temp: 21.36, Humidity: 69.92, pH: 6.63, Crop: "Lentil" },
+{ N: 37, P: 71, K: 16, Temp: 26.29, Humidity: 68.52, pH: 7.32, Crop: "Lentil" },
+{ N: 29, P: 71, K: 18, Temp: 22.17, Humidity: 62.14, pH: 6.41, Crop: "Lentil" },
+{ N: 2, P: 72, K: 18, Temp: 26.58, Humidity: 60.98, pH: 7.84, Crop: "Lentil" },
+{ N: 6, P: 59, K: 21, Temp: 26.59, Humidity: 66.14, pH: 6.14, Crop: "Lentil" },
+{ N: 13, P: 64, K: 20, Temp: 19.13, Humidity: 62.58, pH: 6.59, Crop: "Lentil" },
+{ N: 8, P: 58, K: 17, Temp: 28.75, Humidity: 69.16, pH: 7.29, Crop: "Lentil" },
+{ N: 6, P: 77, K: 20, Temp: 25.79, Humidity: 60.28, pH: 6.06, Crop: "Lentil" },
+{ N: 2, P: 75, K: 22, Temp: 23.89, Humidity: 61.79, pH: 6.66, Crop: "Lentil" },
+{ N: 3, P: 69, K: 23, Temp: 28.67, Humidity: 63.19, pH: 7.30, Crop: "Lentil" },
+{ N: 27, P: 80, K: 24, Temp: 28.42, Humidity: 61.77, pH: 7.82, Crop: "Lentil" },
+{ N: 39, P: 78, K: 15, Temp: 21.35, Humidity: 62.60, pH: 5.93, Crop: "Lentil" },
+{ N: 40, P: 79, K: 17, Temp: 21.13, Humidity: 63.19, pH: 6.40, Crop: "Lentil" },
+{ N: 37, P: 62, K: 22, Temp: 24.02, Humidity: 61.62, pH: 7.40, Crop: "Lentil" },
+{ N: 31, P: 60, K: 24, Temp: 25.40, Humidity: 65.86, pH: 7.72, Crop: "Lentil" },
+{ N: 22, P: 67, K: 22, Temp: 29.03, Humidity: 64.49, pH: 7.48, Crop: "Lentil" },
+{ N: 3, P: 78, K: 18, Temp: 20.21, Humidity: 68.65, pH: 6.89, Crop: "Lentil" },
+{ N: 4, P: 80, K: 16, Temp: 29.20, Humidity: 68.02, pH: 7.44, Crop: "Lentil" },
+{ N: 13, P: 61, K: 24, Temp: 18.30, Humidity: 69.69, pH: 7.63, Crop: "Lentil" },
+{ N: 12, P: 66, K: 20, Temp: 27.41, Humidity: 63.42, pH: 7.34, Crop: "Lentil" },
+{ N: 4, P: 61, K: 21, Temp: 24.84, Humidity: 60.09, pH: 6.75, Crop: "Lentil" },
+{ N: 9, P: 60, K: 21, Temp: 29.94, Humidity: 67.31, pH: 7.52, Crop: "Lentil" },
+{ N: 18, P: 66, K: 22, Temp: 25.88, Humidity: 67.55, pH: 6.35, Crop: "Lentil" },
+{ N: 32, P: 56, K: 18, Temp: 20.05, Humidity: 65.84, pH: 7.14, Crop: "Lentil" },
+{ N: 6, P: 72, K: 15, Temp: 22.99, Humidity: 66.71, pH: 7.67, Crop: "Lentil" },
+{ N: 15, P: 77, K: 20, Temp: 25.13, Humidity: 66.93, pH: 7.40, Crop: "Lentil" },
+{ N: 0, P: 65, K: 24, Temp: 28.50, Humidity: 62.45, pH: 7.84, Crop: "Lentil" },
+{ N: 30, P: 79, K: 22, Temp: 18.29, Humidity: 69.49, pH: 6.25, Crop: "Lentil" },
+{ N: 3, P: 63, K: 16, Temp: 24.38, Humidity: 61.18, pH: 6.87, Crop: "Lentil" },
+{ N: 2, P: 78, K: 23, Temp: 21.32, Humidity: 66.44, pH: 7.32, Crop: "Lentil" },
+{ N: 10, P: 78, K: 18, Temp: 18.54, Humidity: 62.71, pH: 6.30, Crop: "Lentil" },
+{ N: 14, P: 67, K: 25, Temp: 25.29, Humidity: 60.86, pH: 7.24, Crop: "Lentil" },
+{ N: 39, P: 65, K: 23, Temp: 25.43, Humidity: 69.13, pH: 7.69, Crop: "Lentil" },
+{ N: 19, P: 72, K: 15, Temp: 28.84, Humidity: 69.76, pH: 6.89, Crop: "Lentil" },
+{ N: 18, P: 57, K: 21, Temp: 27.38, Humidity: 63.94, pH: 6.16, Crop: "Lentil" },
+{ N: 31, P: 58, K: 15, Temp: 28.32, Humidity: 66.18, pH: 7.34, Crop: "Lentil" },
+{ N: 21, P: 63, K: 18, Temp: 20.75, Humidity: 62.75, pH: 7.48, Crop: "Lentil" },
+{ N: 60, P: 55, K: 44, Temp: 23.0, Humidity: 82, pH: 7.8, Crop: "Wheat" },
+{ N: 74, P: 35, K: 40, Temp: 26.4, Humidity: 80, pH: 6.9, Crop: "Barley" },
+{ N: 78, P: 42, K: 42, Temp: 20.1, Humidity: 81, pH: 7.6, Crop: "Maize" },
+{ N: 31, P: 58, K: 15, Temp: 28.32, Humidity: 66.18, pH: 7.34, Crop: "Pomegranate" },
+{ N: 6, P: 18, K: 37, Temp: 19.66, Humidity: 89.94, pH: 5.94, Crop: "Pomegranate" },
+{ N: 8, P: 26, K: 36, Temp: 18.78, Humidity: 87.4, pH: 6.8, Crop: "Pomegranate" },
+{ N: 37, P: 18, K: 39, Temp: 24.15, Humidity: 94.51, pH: 6.42, Crop: "Pomegranate" },
+{ N: 0, P: 27, K: 38, Temp: 22.45, Humidity: 89.9, pH: 6.74, Crop: "Pomegranate" },
+{ N: 31, P: 25, K: 38, Temp: 24.96, Humidity: 92.41, pH: 6.5, Crop: "Pomegranate" },
+{ N: 21, P: 21, K: 38, Temp: 22.55, Humidity: 89.33, pH: 6.33, Crop: "Pomegranate" },
+{ N: 6, P: 30, K: 40, Temp: 22.77, Humidity: 91.45, pH: 6.36, Crop: "Pomegranate" },
+{ N: 25, P: 27, K: 41, Temp: 19.2, Humidity: 94.28, pH: 6.92, Crop: "Pomegranate" },
+{ N: 15, P: 11, K: 38, Temp: 23.13, Humidity: 92.68, pH: 6.63, Crop: "Pomegranate" },
+{ N: 14, P: 5, K: 36, Temp: 24.93, Humidity: 85.19, pH: 5.83, Crop: "Pomegranate" },
+{ N: 16, P: 10, K: 41, Temp: 24.77, Humidity: 85.64, pH: 6.74, Crop: "Pomegranate" },
+{ N: 36, P: 7, K: 37, Temp: 19.87, Humidity: 86.36, pH: 5.78, Crop: "Pomegranate" },
+{ N: 4, P: 20, K: 41, Temp: 24.27, Humidity: 93.8, pH: 6.54, Crop: "Pomegranate" },
+{ N: 29, P: 22, K: 40, Temp: 23.63, Humidity: 89.73, pH: 6.15, Crop: "Pomegranate" },
+{ N: 16, P: 15, K: 42, Temp: 19.68, Humidity: 89.09, pH: 6.89, Crop: "Pomegranate" },
+{ N: 18, P: 27, K: 41, Temp: 22.37, Humidity: 92.31, pH: 7.18, Crop: "Pomegranate" },
+{ N: 11, P: 18, K: 42, Temp: 21.58, Humidity: 94.88, pH: 5.94, Crop: "Pomegranate" },
+{ N: 5, P: 15, K: 38, Temp: 18.26, Humidity: 88.17, pH: 5.71, Crop: "Pomegranate" },
+{ N: 18, P: 23, K: 44, Temp: 23.71, Humidity: 89.62, pH: 6.18, Crop: "Pomegranate" },
+{ N: 9, P: 8, K: 40, Temp: 22.49, Humidity: 89.92, pH: 6.55, Crop: "Pomegranate" },
+{ N: 40, P: 27, K: 45, Temp: 21.66, Humidity: 94.79, pH: 5.89, Crop: "Pomegranate" },
+{ N: 22, P: 23, K: 44, Temp: 20.13, Humidity: 89.32, pH: 6.14, Crop: "Pomegranate" },
+{ N: 9, P: 16, K: 39, Temp: 18.41, Humidity: 91.12, pH: 6.1, Crop: "Pomegranate" },
+{ N: 12, P: 29, K: 40, Temp: 19.68, Humidity: 89.75, pH: 6.59, Crop: "Pomegranate" },
+{ N: 0, P: 17, K: 42, Temp: 23.2, Humidity: 91.19, pH: 6.86, Crop: "Pomegranate" },
+{ N: 2, P: 21, K: 44, Temp: 18.92, Humidity: 87.31, pH: 6.57, Crop: "Pomegranate" },
+{ N: 28, P: 6, K: 40, Temp: 22.11, Humidity: 91.34, pH: 6.77, Crop: "Pomegranate" },
+{ N: 8, P: 23, K: 44, Temp: 18.47, Humidity: 89.69, pH: 7.13, Crop: "Pomegranate" },
+{ N: 29, P: 16, K: 36, Temp: 19.81, Humidity: 88.93, pH: 5.74, Crop: "Pomegranate" },
+{ N: 17, P: 18, K: 43, Temp: 24.49, Humidity: 90.84, pH: 5.84, Crop: "Pomegranate" },
+{ N: 34, P: 21, K: 42, Temp: 18.76, Humidity: 89.93, pH: 6.65, Crop: "Pomegranate" },
+{ N: 21, P: 23, K: 42, Temp: 19.54, Humidity: 90.3, pH: 6.9, Crop: "Pomegranate" },
+{ N: 25, P: 17, K: 40, Temp: 18.91, Humidity: 87.75, pH: 6.61, Crop: "Pomegranate" },
+{ N: 8, P: 25, K: 36, Temp: 19.91, Humidity: 94.95, pH: 6.83, Crop: "Pomegranate" },
+{ N: 26, P: 18, K: 42, Temp: 19.73, Humidity: 89.65, pH: 6.91, Crop: "Pomegranate" },
+{ N: 4, P: 19, K: 42, Temp: 23.83, Humidity: 87.84, pH: 6.31, Crop: "Pomegranate" },
+{ N: 36, P: 24, K: 41, Temp: 24.94, Humidity: 94.26, pH: 7.01, Crop: "Pomegranate" },
+{ N: 5, P: 24, K: 40, Temp: 24.69, Humidity: 93.87, pH: 6.3, Crop: "Pomegranate" },
+{ N: 19, P: 17, K: 39, Temp: 24.72, Humidity: 85.56, pH: 6.73, Crop: "Pomegranate" },
+{ N: 39, P: 30, K: 38, Temp: 20.13, Humidity: 87.6, pH: 6.97, Crop: "Pomegranate" },
+{ N: 5, P: 29, K: 44, Temp: 21.02, Humidity: 93.06, pH: 5.58, Crop: "Pomegranate" },
+{ N: 4, P: 24, K: 43, Temp: 22.4, Humidity: 88.15, pH: 7.2, Crop: "Pomegranate" },
+{ N: 38, P: 21, K: 35, Temp: 20.34, Humidity: 89.38, pH: 5.84, Crop: "Pomegranate" },
+{ N: 37, P: 11, K: 39, Temp: 19.85, Humidity: 92.9, pH: 5.95, Crop: "Pomegranate" },
+{ N: 22, P: 26, K: 42, Temp: 23.42, Humidity: 92.73, pH: 6.62, Crop: "Pomegranate" },
+{ N: 29, P: 14, K: 39, Temp: 23.17, Humidity: 94.72, pH: 6.58, Crop: "Pomegranate" },
+{ N: 91, P: 94, K: 46, Temp: 29.3679, Humidity: 76.249, pH: 6.1499, Crop: "Banana" },
+{ N: 105, P: 95, K: 50, Temp: 27.3337, Humidity: 83.6767, pH: 5.8491, Crop: "Banana" },
+{ N: 108, P: 92, K: 53, Temp: 27.4005, Humidity: 82.9622, pH: 6.2768, Crop: "Banana" },
+{ N: 86, P: 76, K: 54, Temp: 29.3159, Humidity: 80.1159, pH: 5.9268, Crop: "Banana" },
+{ N: 80, P: 77, K: 49, Temp: 26.0543, Humidity: 79.3965, pH: 5.5191, Crop: "Banana" },
+{ N: 93, P: 94, K: 53, Temp: 25.8663, Humidity: 84.4238, pH: 6.0792, Crop: "Banana" },
+{ N: 90, P: 92, K: 55, Temp: 27.0093, Humidity: 80.1855, pH: 6.1347, Crop: "Banana" },
+{ N: 108, P: 89, K: 53, Temp: 29.5505, Humidity: 78.0676, pH: 5.8085, Crop: "Banana" },
+{ N: 108, P: 88, K: 55, Temp: 26.2885, Humidity: 83.3900, pH: 5.8915, Crop: "Banana" },
+{ N: 105, P: 77, K: 52, Temp: 29.1623, Humidity: 76.1615, pH: 5.8166, Crop: "Banana" },
+{ N: 118, P: 88, K: 52, Temp: 28.6500, Humidity: 82.6875, pH: 5.8432, Crop: "Banana" },
+{ N: 101, P: 87, K: 54, Temp: 29.0731, Humidity: 76.5005, pH: 6.3768, Crop: "Banana" },
+{ N: 95, P: 75, K: 50, Temp: 28.0817, Humidity: 75.2643, pH: 5.6236, Crop: "Banana" },
+{ N: 106, P: 85, K: 53, Temp: 27.1995, Humidity: 78.8086, pH: 5.8634, Crop: "Banana" },
+{ N: 78, P: 62, K: 42, Temp: 31.2638, Humidity: 80.9482, pH: 6.2213, Crop: "Mango" },
+{ N: 85, P: 68, K: 48, Temp: 30.2969, Humidity: 77.3575, pH: 6.0208, Crop: "Mango" },
+{ N: 90, P: 75, K: 50, Temp: 30.1542, Humidity: 79.8948, pH: 6.1873, Crop: "Mango" },
+{ N: 76, P: 64, K: 45, Temp: 29.8719, Humidity: 82.1854, pH: 5.8987, Crop: "Mango" },
+{ N: 80, P: 70, K: 49, Temp: 30.6677, Humidity: 83.3198, pH: 6.0453, Crop: "Mango" },
+{ N: 82, P: 73, K: 47, Temp: 30.3457, Humidity: 78.6633, pH: 6.3248, Crop: "Mango" },
+{ N: 86, P: 72, K: 51, Temp: 29.9010, Humidity: 80.5156, pH: 5.9579, Crop: "Mango" },
+{ N: 87, P: 74, K: 53, Temp: 30.4121, Humidity: 81.6529, pH: 6.1362, Crop: "Mango" },
+{ N: 85, P: 70, K: 50, Temp: 29.8296, Humidity: 77.8007, pH: 6.0216, Crop: "Mango" },
+{ N: 84, P: 69, K: 52, Temp: 30.0144, Humidity: 79.1632, pH: 6.1639, Crop: "Mango" }
+
+
+        
+    ];
+
+    function predictCrop() {
+        // Get input values
+        const nitrogen = parseFloat(document.getElementById("nitrogen").value);
+        const phosphorus = parseFloat(document.getElementById("phosphorus").value);
+        const potassium = parseFloat(document.getElementById("potassium").value);
+        const phValue = parseFloat(document.getElementById("phValue").value);
+        const humidity = parseFloat(document.getElementById("humidity").value);
+        const temperature = parseFloat(document.getElementById("temperature").value);
+
+        // Validate inputs
+        if (isNaN(nitrogen) || isNaN(phosphorus) || isNaN(potassium) || isNaN(phValue) || isNaN(humidity) || isNaN(temperature)) {
+            alert("Please fill in all fields with valid values.");
+            return;
+        }
+
+        // Find closest match in dataset
+        let closestCrop = null;
+        let smallestDifference = Infinity;
+
+        dataset.forEach(data => {
+            const difference = Math.abs(data.N - nitrogen) +
+                               Math.abs(data.P - phosphorus) +
+                               Math.abs(data.K - potassium) +
+                               Math.abs(data.pH - phValue) +
+                               Math.abs(data.Humidity - humidity) +
+                               Math.abs(data.Temp - temperature);
+
+            if (difference < smallestDifference) {
+                smallestDifference = difference;
+                closestCrop = data.Crop;
+            }
+        });
+
+        // Display result
+        const resultElement = document.getElementById("prediction-result");
+        resultElement.innerText = closestCrop
+            ? `Recommended Crop: ${closestCrop}`
+            : "No suitable crop found.";
+    }
+</script>
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Quick Link</h4>
+                    <p><a class="text-light" href="about.html">About Us</a></p>
+                    <p><a class="text-light" href="contact.html">Contact Us</a></p>
+                    <p><a class="text-light" href="">Privacy Policy</a></p>
+                    <p><a class="text-light" href="">Terms & Condition</a></p>
+                    <p><a class="text-light" href="">FAQs & Help</a></p>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>KIET Group of Institution, Ghaziabad, Uttar Pradesh</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 7454040400</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>agrocare@gmail.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Stay Updated with AGRO CARE</h4>
+                    <p>Join our community to receive the latest updates.</p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <form action="#">
+                            <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="email"
+                                placeholder="Your email" required>
+                            <button type="submit"
+                                class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2"><a
+                                    href="mailto:keertidvcorai@gmail.com">Subscribe</a></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="index.html">AGRO CARE</a>, All Right Reserved.
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
